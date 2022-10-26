@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="'Add User'">Welcome</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"></script>
+</head>
+<body class="container">
+<form th:href="@{/user/add}" method="post" th:object="${user}">
+    <label class="form-label">Username<input class="form-control" type="text" required th:field="*{username}" th:errorClass="is-invalid"></input></label><br/>
+    <label class="form-label">Email<input class="form-control" type="email" required="true"  th:field="*{email}"></input></label><br/>
+    <label class="form-label">Password<input class="form-control" type="password" required="true"  name="password"></input></label><br/>
+    <label class="form-label">Verify Password<input class="form-control" type="password" required="true" name="verify"></input></label><br/>
+    <button class="btn btn-primary">Add User</button>
+</form>
+
+</body>
+</html>
